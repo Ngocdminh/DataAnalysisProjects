@@ -1,0 +1,30 @@
+1. Descriptive Statistics
+    Summary Statistics: Calculate mean, median, mode, standard deviation, and range for numerical columns like asking_price_sek, land_area_sqm, living_area_sqm, and sqm_price_sek.
+    Distribution Analysis: Plot histograms and box plots to understand the distribution of prices, land area, and living area.
+
+2. Time Series Analysis
+    Price Trends: Analyze how asking_price_sek has changed over time using line plots.
+    Seasonality: Check for seasonal patterns in housing prices by aggregating data by month or quarter.
+
+3. Geospatial Analysis
+    Price by Location: Use scatter plots or heatmaps to visualize housing prices on a map using coordenates.
+    Clustering: Apply clustering algorithms (e.g., K-means) to identify areas with similar price ranges.
+
+4. Correlation Analysis
+    Feature Correlation: Calculate correlation coefficients between asking_price_sek and other numerical features to identify strong relationships.
+    Heatmap: Visualize correlations using a heatmap.
+
+5. Predictive Modeling
+    Regression Analysis: Build regression models (e.g., Linear Regression, Random Forest) to predict asking_price_sek based on other features.
+    Feature Importance: Identify which features are most important in predicting housing prices.
+
+6. Categorical Analysis
+    Typology Analysis: Compare average prices, land area, and living area across different typology categories.
+    Room Count Analysis: Analyze how the number of rooms affects the asking price.
+
+7. Outlier Detection
+    Identify Outliers: Use statistical methods or machine learning algorithms to detect outliers in price, land area, and living area.
+
+8. Price per Square Meter Analysis
+    Price Efficiency: Analyze sqm_price_sek to understand the price efficiency of different properties.
+    Comparison by Location: Compare sqm_price_sek across different locations to identify high-value areas.
