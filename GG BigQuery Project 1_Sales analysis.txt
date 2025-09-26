@@ -1,0 +1,27 @@
+CREATE TEMP TABLE filtered_data AS SELECT * FROM `linen-centaur-437515-i4.Practice_1.Order ` WHERE _PARTITIONTIME IS NOT NULL; --Create a temporary table for running multiple queries
+
+SELECT DISTINCT `Ship Mode` FROM filtered_data; -- Get distinct values of shipping modes
+
+SELECT   --Get total sales, quantity, profit
+  SUM(Sales) AS total_sales,
+  SUM(Quantity) AS total_quantity,
+  SUM(Profit) AS total_profit
+FROM filtered_data;
+
+SELECT `Product Name`, SUM(Sales) AS total_sales  --Get the top 10 selling products
+FROM filtered_data GROUP BY `Product Name` ORDER BY total_sales DESC LIMIT 10;
+
+SELECT Region, ROUND(SUM(Sales),2) AS total_sales, ROUND(SUM(Profit),2) AS total_profit FROM filtered_data GROUP BY `Region` ORDER BY total_sales DESC; --Get sales by region
+
+SELECT EXTRACT(YEAR FROM DATE(`Order Date`)) AS order_year,    --See monthly sale trends
+  EXTRACT(MONTH FROM DATE(`Order Date`)) AS order_month,
+  SUM(Sales) AS monthly_sales
+FROM filtered_data GROUP BY order_year,order_month ORDER BY order_year,order_month;
+
+SELECT Category, SUM(Profit)/SUM(Sales) AS profit_margin               -- Get profit margin by categories
+FROM filtered_data GROUP BY Category ORDER BY profit_margin DESC;
+
+SELECT Discount, ROUND(AVG(Profit),2) AS avg_profit, COUNT(*) AS orders          --See the impact of discount on profit
+FROM filtered_data GROUP BY Discount ORDER BY Discount;
+
+Results of above analyses show that a total of 37,873 items were sold, with total sales of 2,297,200 and total profit of 286,397. Top performing products include Cannon imageCLASS,Fellowes PB500, Cisco Telepresence. Most number of sales are made in the West region, followed by East, then Central and South. Sales were made the most in January. Profit margin is the highest in Technology category. Surprisingly, larger discount does not equal more profits orders; 10% discount leads to the most profits, profitability is only possible with <=20% discount, higher discount does not lead to more orders and even lead to loss of profits. 
