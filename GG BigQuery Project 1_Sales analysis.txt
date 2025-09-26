@@ -24,4 +24,8 @@ FROM filtered_data GROUP BY Category ORDER BY profit_margin DESC;
 SELECT Discount, ROUND(AVG(Profit),2) AS avg_profit, COUNT(*) AS orders          --See the impact of discount on profit
 FROM filtered_data GROUP BY Discount ORDER BY Discount;
 
-Results of above analyses show that a total of 37,873 items were sold, with total sales of 2,297,200 and total profit of 286,397. Top performing products include Cannon imageCLASS,Fellowes PB500, Cisco Telepresence. Most number of sales are made in the West region, followed by East, then Central and South. Sales were made the most in January. Profit margin is the highest in Technology category. Surprisingly, larger discount does not equal more profits orders; 10% discount leads to the most profits, profitability is only possible with <=20% discount, higher discount does not lead to more orders and even lead to loss of profits. 
+
+Results of above analyses show that a total of 37,873 items were sold, with total sales of 2,297,200 and total profit of 286,397. 
+Top performing products include Cannon imageCLASS,Fellowes PB500, Cisco Telepresence. Most number of sales are made in the West region, followed by East, then Central and South. 
+Sales were made the most in January. Profit margin is the highest in Technology category. Surprisingly, larger discount does not equal more profits orders; 
+10% discount leads to the most profits, profitability is only possible with <=20% discount, higher discount does not lead to more orders and even lead to loss of profits. 
